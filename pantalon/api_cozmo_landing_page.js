@@ -60,7 +60,7 @@ $("#formInfo").submit(function (event) {
           product_id: "1127",
         });
 
-        document.location.href = "/lp/order_success.html";
+        document.location.href = "/pantalon/order_success.html";
         // To track the purchase event using Snap Pixel
         // snaptr("track", "PURCHASE", { value: 132, currency: "USD" });
       } else {
