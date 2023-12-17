@@ -16,6 +16,7 @@ $("#formInfo").submit(function (event) {
   var product_color = $('#formInfo select[name="product_color"]').val();
   // var number_tier = $('#formInfo input[name="number_tier"]').val();
   var price = $('#formInfo input[name="price_tiers"]').val();
+  var product_size = $('#formInfo input[name="product_size"]').val();
 
 // Create the data object for SheetDB
   var sheetDBData = {
@@ -27,7 +28,7 @@ $("#formInfo").submit(function (event) {
     address: adresse,
     quantity: variant,
     price: price + " Dh",
-    product_notice: product_size,
+    product_notice: "",
     notice: "Color: " + product_color,
     status: "pending",
     fees_shipping: "",
