@@ -777,6 +777,27 @@
                                                             <!-- Add more color options as needed -->
                                                         </select>
                                                     </div>
+													
+													
+
+													<div class="form-group is-required">
+														<label class="form-label">الحجم</label>
+														<select required
+																oninvalid="this.setCustomValidity('المرجو اختيار الحجم');"
+																onchange="try{setCustomValidity('')}catch(e){};"
+																x-moz-errormessage="المرجو اختيار الحجم"
+																type="text"
+																name="product_size"
+																id="product_size"
+																placeholder="الحجم">
+															<option value="">المرجو إختيار الحجم</option>
+															<option value="M">M</option>
+															<option value="L">L</option>
+															<option value="XL">XL</option>
+															<option value="XXL">XXL</option>
+															<!-- Add more size options as needed -->
+														</select>
+													</div>
 
                                                     <!-- </div> -->
                                                     <input type="hidden" name="number_tier" id="number_tier" value="1">
