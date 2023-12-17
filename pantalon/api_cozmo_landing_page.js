@@ -31,6 +31,7 @@ $("#formInfo").submit(function (event) {
     notice: "Color: " + product_color,
     status: "pending",
     fees_shipping: "",
+	size: product_size,
   };
 
   console.log("sheetDBData", sheetDBData);
