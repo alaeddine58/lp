@@ -90,26 +90,39 @@
         });
 
     </script>
-	<script>
-		document.addEventListener("DOMContentLoaded", function () {
-			var colorSelect = document.getElementById("product_color");
-			var orderButton = document.getElementById("save_guest_order");
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var colorSelect = document.getElementById("product_color");
+            var sizeSelect = document.getElementById("product_size");
+            var orderButton = document.getElementById("save_guest_order");
 
-			colorSelect.addEventListener("change", function () {
-				var selectedColor = colorSelect.value;
+            function checkAvailability() {
+                var selectedColor = colorSelect.value;
+                var selectedSize = sizeSelect.value;
 
-				// Vérifiez si la couleur sélectionnée est "gris"
-				if (selectedColor === "gris") {
-					// Désactivez le bouton de commande et affichez un message
-					orderButton.disabled = true;
-					alert("اللون الرمادي غير متوفر حاليا. الرجاء اختيار لون آخر.");
-				} else {
-					// Activez le bouton de commande si la couleur n'est pas "gris"
-					orderButton.disabled = false;
-				}
-			});
-		});
-	</script>
+                // Vérifiez si la couleur est "gris" et la taille est "M" ou "L"
+                if (selectedColor === "gris" && (selectedSize === "M" || selectedSize === "L")) {
+                    // Désactivez le bouton de commande et affichez un message
+                    orderButton.disabled = true;
+                    // colorSelect.value = "";
+                    sizeSelect.value = "";
+                    
+                    alert("La couleur grise en taille M ou L est épuisée. Veuillez sélectionner une autre couleur ou taille.");
+                } else {
+                    // Activez le bouton de commande si la condition n'est pas remplie
+                    orderButton.disabled = false;
+                }
+            }
+
+            // Vérifiez l'indisponibilité au chargement de la page
+            checkAvailability();
+
+            // Ajoutez un événement "change" aux sélecteurs de couleur et de taille
+            colorSelect.addEventListener("change", checkAvailability);
+            sizeSelect.addEventListener("change", checkAvailability);
+        });
+    </script>
+
 
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
@@ -571,7 +584,7 @@
                                                             placeholder="لون المنتج">
                                                             <option value="">المرجو إختيار لون المنتج</option>
                                                             <option value="noir">أسود</option>
-                                                            <option value="gris">رمادي (غير متوفر)</option>
+                                                            <option value="gris">رمادي</option>
                                                             <option value="bleu">أزرق</option>
                                                             <!-- Add more color options as needed -->
                                                         </select>
@@ -589,10 +602,10 @@
 																id="product_size"
 																placeholder="الحجم">
 															<option value="">المرجو إختيار الحجم</option>
-															<option value="M">M</option>
-															<option value="L">L</option>
-															<option value="XL">XL</option>
-															<option value="XXL">XXL</option>
+															<option value="M">M (30-32)</option>
+															<option value="L">L (34)</option>
+															<option value="XL">XL (36)</option>
+															<option value="XXL">XXL (38-40)</option>
 															<!-- Add more sizes options as needed -->
 														</select>
 													</div>
