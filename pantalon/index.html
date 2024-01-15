@@ -556,6 +556,7 @@
                                                             <option value="">المرجو إختيار الكمية</option>
                                                             <option value="1">واحد ب 249 درهم فقط</option>
                                                             <option value="2">إثنان ب 459 درهم فقط</option>
+															<option value="3">ثلاثة ب 649 درهم فقط</option>
                                                         </Select>
                                                     </div>
 
@@ -930,6 +931,10 @@
                 price_tiers.value = "459";
                 // hiddenInput.value = "2";
                 currencyElement.innerText = "459";
+			} else if (selectedValue === "3") {
+                price_tiers.value = "649";
+                // hiddenInput.value = "3";
+                currencyElement.innerText = "649";
             } else {
                 price_tiers.value = "249";
                 // hiddenInput.value = "1";
