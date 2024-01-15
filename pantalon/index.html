@@ -90,26 +90,39 @@
         });
 
     </script>
-	<script>
-		document.addEventListener("DOMContentLoaded", function () {
-			var colorSelect = document.getElementById("product_color");
-			var orderButton = document.getElementById("save_guest_order");
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var colorSelect = document.getElementById("product_color");
+            var sizeSelect = document.getElementById("product_size");
+            var orderButton = document.getElementById("save_guest_order");
 
-			colorSelect.addEventListener("change", function () {
-				var selectedColor = colorSelect.value;
+            function checkAvailability() {
+                var selectedColor = colorSelect.value;
+                var selectedSize = sizeSelect.value;
 
-				// Vérifiez si la couleur sélectionnée est "gris"
-				if (selectedColor === "gris") {
-					// Désactivez le bouton de commande et affichez un message
-					orderButton.disabled = true;
-					alert("اللون الرمادي غير متوفر حاليا. الرجاء اختيار لون آخر.");
-				} else {
-					// Activez le bouton de commande si la couleur n'est pas "gris"
-					orderButton.disabled = false;
-				}
-			});
-		});
-	</script>
+                // Vérifiez si la couleur est "gris" et la taille est "M" ou "L"
+                if (selectedColor === "gris" && (selectedSize === "M" || selectedSize === "L")) {
+                    // Désactivez le bouton de commande et affichez un message
+                    orderButton.disabled = true;
+                    // colorSelect.value = "";
+                    sizeSelect.value = "";
+                    
+                    alert("اللون الرمادي غير متوفر في هذا المقاس. المرجو إختيار لون آخر.");
+                } else {
+                    // Activez le bouton de commande si la condition n'est pas remplie
+                    orderButton.disabled = false;
+                }
+            }
+
+            // Vérifiez l'indisponibilité au chargement de la page
+            checkAvailability();
+
+            // Ajoutez un événement "change" aux sélecteurs de couleur et de taille
+            colorSelect.addEventListener("change", checkAvailability);
+            sizeSelect.addEventListener("change", checkAvailability);
+        });
+    </script>
+
 
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
@@ -295,7 +308,6 @@
         }
 
 
-        }
     </style>
     <script class="u-script" type="text/javascript" src="clients_reviews/jquery-1.9.1.min.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="clients_reviews/nicepage.js" defer=""></script>
@@ -373,7 +385,7 @@
 
                     <div class="mySlides fade">
                         <div class="numbertext">1 / 5</div>
-                        <img src="https://cdn.shopify.com/s/files/1/0823/3821/8305/files/slide1.jpg?v=1702592862"
+                        <img src="https://cdn.shopify.com/s/files/1/0823/3821/8305/files/SL2_3f49121b-b148-4325-a497-d5a6239739f5.jpg?v=1705234976"
                             style="width:100%">
                     </div>
 
@@ -451,7 +463,7 @@
                     function startAutoScroll() {
                         autoScrollInterval = setInterval(function () {
                             plusSlides(1);
-                        }, 3000); // Adjust the interval (in milliseconds) as needed
+                        }, 5000); // Adjust the interval (in milliseconds) as needed
                     }
 
                     function stopAutoScroll() {
@@ -482,6 +494,12 @@
                     // Start auto-scroll on page load
                     startAutoScroll();
                 </script>
+				
+				<div class="container">
+                    <img src="https://cdn.shopify.com/s/files/1/0823/3821/8305/files/couleurs.jpg?v=1705182395"
+                        alt="Image description">
+  
+                </div>
 
 
 <section id="PBS-47z7f1661723616426" class="section page-section title-section PBS-47z7f1661723616426"
@@ -572,7 +590,7 @@
                                                             placeholder="لون المنتج">
                                                             <option value="">المرجو إختيار لون المنتج</option>
                                                             <option value="noir">أسود</option>
-                                                            <option value="gris">رمادي (غير متوفر)</option>
+                                                            <option value="gris">رمادي</option>
                                                             <option value="bleu">أزرق</option>
                                                             <!-- Add more color options as needed -->
                                                         </select>
@@ -590,10 +608,10 @@
 																id="product_size"
 																placeholder="الحجم">
 															<option value="">المرجو إختيار الحجم</option>
-															<option value="M">M</option>
-															<option value="L">L</option>
-															<option value="XL">XL</option>
-															<option value="XXL">XXL</option>
+															<option value="M">M (30-32)</option>
+															<option value="L">L (34)</option>
+															<option value="XL">XL (36)</option>
+															<option value="XXL">XXL (38-40)</option>
 															<!-- Add more sizes options as needed -->
 														</select>
 													</div>
@@ -646,7 +664,7 @@
                 </section>
 
                 <div class="container">
-                    <img src="https://cdn.shopify.com/s/files/1/0823/3821/8305/files/lp-part1.jpg?v=1702593364"
+                    <img src="https://cdn.shopify.com/s/files/1/0823/3821/8305/files/PART1.jpg?v=1705181541"
                         alt="Image description">
                     <img src="https://cdn.shopify.com/s/files/1/0823/3821/8305/files/Pant1.gif?v=1702594760" alt="">
 					<img src="https://cdn.shopify.com/s/files/1/0823/3821/8305/files/bleu2_62cef79a-feba-4e0a-92cb-f92d46d9801b.jpg?v=1703961507" alt="">
@@ -672,6 +690,13 @@
                     <img src="https://see.saileeshop.com/img/20231204/15241012103.gif?=0" alt=""> -->
                     <a href="#PBS-qnim9k1632909988068">
                         <button id="fade_buy_btn_lead" class="overlay-button" style="top: 7.0%;">إشتري الآن ب 249 درهم فقط
+                            </button>
+                    </a>
+                    <a href="#PBS-qnim9k1632909988068">
+                        <button id="fade_buy_btn_lead" class="overlay-button" style="top: 94%;
+                        position: fixed;
+                        padding: 15px 10px !important;
+                        font-size: 21px;    ">إشتري الآن ب 249 درهم فقط
                             </button>
                     </a>
                 </div>
