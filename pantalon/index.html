@@ -100,8 +100,8 @@
                 var selectedColor = colorSelect.value;
                 var selectedSize = sizeSelect.value;
 
-                // Vérifiez si la couleur est "gris" et la taille est "M" ou "L"
-                if (selectedColor === "gris" && (selectedSize === "M" || selectedSize === "L")) {
+                // Vérifiez si la couleur est "LightGrey" et la taille est "M" ou "L"
+                if (selectedColor === "LightGrey" && (selectedSize === "M" || selectedSize === "L")) {
                     // Désactivez le bouton de commande et affichez un message
                     orderButton.disabled = true;
                     // colorSelect.value = "";
@@ -589,9 +589,12 @@
                                                             name="product_color" id="product_color"
                                                             placeholder="لون المنتج">
                                                             <option value="">المرجو إختيار لون المنتج</option>
-                                                            <option value="noir">أسود</option>
+                                                            <!-- <option value="noir">أسود</option>
                                                             <option value="gris">رمادي</option>
-                                                            <option value="bleu">أزرق</option>
+                                                            <option value="bleu">أزرق</option> -->
+                                                            <option value="Black">أسود</option>
+                                                            <option value="LightGrey">رمادي</option>
+                                                            <option value="SteelBlue">أزرق</option>
                                                             <!-- Add more color options as needed -->
                                                         </select>
                                                     </div>

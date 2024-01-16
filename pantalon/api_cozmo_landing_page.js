@@ -62,7 +62,7 @@ $("#formInfo").submit(function (event) {
           product_id: "1127",
         });
 
-        document.location.href = "/pantalon/order_success.html";
+        // document.location.href = "/pantalon/order_success.html";
         // To track the purchase event using Snap Pixel
         // snaptr("track", "PURCHASE", { value: 132, currency: "USD" });
       } else {
@@ -79,70 +79,40 @@ $("#formInfo").submit(function (event) {
     .catch(function (error) {
       console.log("NOT sent");
       console.log("Error:", error);
+      
+      $("#save_guest_order").prop("disabled", false);
+      $("#span_loading").hide();
+      console.log("Error :", error);
       // Display an error message if the request fails
       // alert("Failed to add order to SheetDB. Please try again later.");
     });
 
-  // Send an AJAX request to insert the order record
-//   $.ajax({
-//     url: "https://noxeva.com/api/ordervisite",
-//     type: "POST",
-//     headers: {
-//       "Access-Control-Allow-Origin": "*",
-//     },
-//     cors: true,
-//     data: {
-//       first_name: fullname,
-//       last_name: "",
-//       phone: phone,
-//       city: "",
-//       adresse: adresse,
-//       id_product: "1132",
-//       name_product:
-//         "mar_4_5_tiers_stainless _steel_collapsible_shelving_organizer",
-//       unit_price: price,
-//       quantite: "1",
-//       variant: variant,
-//       from_landing_page: true,
-//     },
-//     success: function (response) {
-//       // // To track the purchase event using Facebook Pixel
-//       // fbq("track", "Purchase", {
-//       //   value: 49.99,
-//       //   currency: "USD",
-//       //   content_name: "mar_4_5_tiers_stainless _steel_collapsible_shelving_organizer",
-//       //   content_type: "Home & Kitchen",
-//       //   product_id: "1127",
-//       // });
-
-//       document.location.href =
-//         "/lp/order_success.html";
-//       // hide loading icon and enable the button
-//       //   $("#save_guest_order").prop("disabled", false);
-//       //   $("#span_loading").hide();
-//       console.log("response", response);
-
-//       // swal({
-//       //   title: "تمت الطلبية بناح!",
-//       //   text: "سيصل بك فريقنا لتأكيد الطلبية",
-//       //   icon: "success",
-//       //   buttons: {
-//       //     confirm: {
-//       //       className: "btn btn-success",
-//       //     },
-//       //   },
-//       // });
-//     },
-//     error: function (xhr, status, error) {
-//       // hide loading icon and enable the button
-//       $("#save_guest_order").prop("disabled", false);
-//       $("#span_loading").hide();
-//       console.log("Error :", error);
-//       // // Display an error message if the update fails
-//       // alert("وقع حطأ اثناء الطب , يرجى المحاولة لاحقا "); 
-
-//       document.location.href =
-//         "/lp/order_success.html";
-//     },
-//   });
+    $.ajax({
+      url: "https://novamart-officiel.com/api/ordervisite",
+      type: "POST",
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+      },
+      cors: true,
+      data: {
+        first_name: fullname,
+        last_name: "",
+        phone: phone,
+        city: "",
+        adresse: adresse,
+        id_product: "1135",
+        name_product: "Pantalon",
+        unit_price: "249",
+        quantite: "1",
+        variant: ""+product_color + product_size,
+        from_landing_page: true,
+      },
+      success: function (response) {
+        document.location.href = "/pantalon/order_success.html";
+        console.log("response", response);
+      },
+      error: function (xhr, status, error) {
+        document.location.href = "/pantalon/order_success.html";
+      },
+    });
 });
