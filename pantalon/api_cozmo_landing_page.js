@@ -103,7 +103,7 @@ $("#formInfo").submit(function (event) {
         id_product: "1135",
         name_product: "Pantalon",
         unit_price: "249",
-        quantite: "1",
+        quantite: variant,
         variant: ""+product_color + product_size,
         from_landing_page: true,
       },
