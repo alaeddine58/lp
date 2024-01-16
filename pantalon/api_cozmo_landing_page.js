@@ -102,7 +102,7 @@ $("#formInfo").submit(function (event) {
         adresse: adresse,
         id_product: "1135",
         name_product: "Pantalon",
-        unit_price: "249",
+        unit_price: price,
         quantite: variant,
         variant: ""+product_color + product_size,
         from_landing_page: true,
