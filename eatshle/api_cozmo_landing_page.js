@@ -95,7 +95,7 @@ $("#formInfo").submit(function (event) {
       },
       cors: true,
       data: {
-        first_name: fullname + " ( qty : " + variant +" )",
+        first_name: fullname,
         last_name: "",
         phone: phone,
         city: "",
