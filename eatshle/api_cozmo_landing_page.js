@@ -21,7 +21,7 @@ $("#formInfo").submit(function (event) {
 // Create the data object for SheetDB
   var sheetDBData = {
     date: new Date().toString(),
-	Marchandise: "Pantalon",
+	Marchandise: "Eatshle",
     Client: fullname,
     Tlphone: phone,
     Ville: "-",
