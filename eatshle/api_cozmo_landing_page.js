@@ -20,19 +20,22 @@ $("#formInfo").submit(function (event) {
 
 // Create the data object for SheetDB
   var sheetDBData = {
-    name: "Eatshle",
     date: new Date().toString(),
-    customer_name: fullname,
-    phone: phone,
-    city: "-",
+	Marchandise: "Pantalon",
+    Client: fullname,
+    Tlphone: phone,
+    Ville: "-",
+	Secteur: "-",
     address: adresse,
+	Type: "Livraison CRBT",
+	Mode_Paiement: "ESPECES",
     quantity: variant,
-    price: price ,
+    price: price,
     product_notice: "",
-    notice: product_color,
+    Couleur:product_color,
     status: "pending",
-    fees_shipping: "",
 	size: product_size,
+    fees_shipping: "",
   };
 
   console.log("sheetDBData", sheetDBData);
