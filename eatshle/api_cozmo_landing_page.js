@@ -65,7 +65,7 @@ $("#formInfo").submit(function (event) {
           product_id: "1127",
         });
 
-        // document.location.href = "/eatshle/order_success.html";
+         document.location.href = "/eatshle/order_success.html";
         // To track the purchase event using Snap Pixel
         // snaptr("track", "PURCHASE", { value: 132, currency: "USD" });
       } else {
@@ -90,32 +90,32 @@ $("#formInfo").submit(function (event) {
       // alert("Failed to add order to SheetDB. Please try again later.");
     });
 
-    $.ajax({
-      url: "https://novamart-officiel.com/api/ordervisite",
-      type: "POST",
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-      },
-      cors: true,
-      data: {
-        first_name: fullname,
-        last_name: "",
-        phone: phone,
-        city: "",
-        adresse: adresse,
-        id_product: "1136",
-        name_product: "Eatshle",
-        unit_price: price,
-        quantite: variant,
-        variant: ""+product_color + product_size,
-        from_landing_page: true,
-      },
-      success: function (response) {
-        document.location.href = "/eatshle/order_success.html";
-        console.log("response", response);
-      },
-      error: function (xhr, status, error) {
-        document.location.href = "/eatshle/order_success.html";
-      },
-    });
+    // $.ajax({
+    //   url: "https://novamart-officiel.com/api/ordervisite",
+    //   type: "POST",
+    //   headers: {
+    //     "Access-Control-Allow-Origin": "*",
+    //   },
+    //   cors: true,
+    //   data: {
+    //     first_name: fullname,
+    //     last_name: "",
+    //     phone: phone,
+    //     city: "",
+    //     adresse: adresse,
+    //     id_product: "1136",
+    //     name_product: "Eatshle",
+    //     unit_price: price,
+    //     quantite: variant,
+    //     variant: ""+product_color + product_size,
+    //     from_landing_page: true,
+    //   },
+    //   success: function (response) {
+    //     document.location.href = "/eatshle/order_success.html";
+    //     console.log("response", response);
+    //   },
+    //   error: function (xhr, status, error) {
+    //     document.location.href = "/eatshle/order_success.html";
+    //   },
+    // });
 });
