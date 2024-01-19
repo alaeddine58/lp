@@ -98,6 +98,7 @@ document.getElementById('save_guest_order').addEventListener('click', function(e
     var selectedColor = document.getElementById('product_color').value;
     var selectedSize = document.getElementById('product_size').value;
 
+<<<<<<< HEAD
     // Logique de vérification de disponibilité
     if (selectedColor === 'LightGrey') {
         alert('اللون الرمادي غير متوفر. المرجو إختيار لون آخر.');
@@ -108,7 +109,21 @@ document.getElementById('save_guest_order').addEventListener('click', function(e
         document.getElementById('formInfo').submit();
     }
 });
-
+=======
+                // Vérifiez si la couleur est "LightGrey" et la taille est "M" ou "L"
+                if (selectedColor === "LightGrey" ) {
+                    // Désactivez le bouton de commande et affichez un message
+                    orderButton.disabled = true;
+                    // colorSelect.value = "";
+                    sizeSelect.value = "";
+                    
+                    alert("اللون الرمادي غير متوفر . المرجو إختيار لون آخر");
+                } else {
+                    // Activez le bouton de commande si la condition n'est pas remplie
+                    orderButton.disabled = false;
+                }
+            }
+>>>>>>> db3eabe429032847cd673a9bd6a2ccaf367887f8
 
     </script>
 
