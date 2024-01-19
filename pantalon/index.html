@@ -26,15 +26,15 @@
 
     <link href="css/root.css" rel="stylesheet">
     <link href="css/store_font.css" rel="stylesheet">
-	
-	<script>
-	!function (w, d, t) {
-	  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src=i+"?sdkid="+e+"&lib="+t;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(o,a)};
 
-	  ttq.load('CLVF8JRC77U0797C9820');
-	  ttq.page();
-	}(window, document, 'ttq');
-	</script>
+    <script>
+        !function (w, d, t) {
+            w.TiktokAnalyticsObject = t; var ttq = w[t] = w[t] || []; ttq.methods = ["page", "track", "identify", "instances", "debug", "on", "off", "once", "ready", "alias", "group", "enableCookie", "disableCookie"], ttq.setAndDefer = function (t, e) { t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))) } }; for (var i = 0; i < ttq.methods.length; i++)ttq.setAndDefer(ttq, ttq.methods[i]); ttq.instance = function (t) { for (var e = ttq._i[t] || [], n = 0; n < ttq.methods.length; n++)ttq.setAndDefer(e, ttq.methods[n]); return e }, ttq.load = function (e, n) { var i = "https://analytics.tiktok.com/i18n/pixel/events.js"; ttq._i = ttq._i || {}, ttq._i[e] = [], ttq._i[e]._u = i, ttq._t = ttq._t || {}, ttq._t[e] = +new Date, ttq._o = ttq._o || {}, ttq._o[e] = n || {}; var o = document.createElement("script"); o.type = "text/javascript", o.async = !0, o.src = i + "?sdkid=" + e + "&lib=" + t; var a = document.getElementsByTagName("script")[0]; a.parentNode.insertBefore(o, a) };
+
+            ttq.load('CLVF8JRC77U0797C9820');
+            ttq.page();
+        }(window, document, 'ttq');
+    </script>
 
     <!-- <script src="js/fbevents.js"></script> -->
 
@@ -91,40 +91,40 @@
 
     </script>
     <script>
-document.getElementById('save_guest_order').addEventListener('click', function(event) {
-    event.preventDefault(); // Empêcher l'envoi du formulaire pour le moment
+        document.addEventListener("DOMContentLoaded", function () {
+            var colorSelect = document.getElementById("product_color");
+            var sizeSelect = document.getElementById("product_size");
+            var orderButton = document.getElementById("save_guest_order");
 
-    // Récupérer les valeurs sélectionnées par l'utilisateur
-    var selectedColor = document.getElementById('product_color').value;
-    var selectedSize = document.getElementById('product_size').value;
+            function checkAvailability() {
+                var selectedColor = colorSelect.value;
+                var selectedSize = sizeSelect.value;
 
-<<<<<<< HEAD
-    // Logique de vérification de disponibilité
-    if (selectedColor === 'LightGrey') {
-        alert('اللون الرمادي غير متوفر. المرجو إختيار لون آخر.');
-    } else if ((selectedColor === 'Black' && selectedSize === 'L') || (selectedColor === 'SteelBlue' && selectedSize === 'XXL')) {
-        alert('هذا اللون غير متوفر حاليا. سيصبح متوفرا خلال ثلاثة أيام.');
-    } else {
-        // Si l'article est disponible, vous pouvez soumettre le formulaire
-        document.getElementById('formInfo').submit();
-    }
-});
-=======
                 // Vérifiez si la couleur est "LightGrey" et la taille est "M" ou "L"
-                if (selectedColor === "LightGrey" ) {
+                if (selectedColor === "LightGrey") {
                     // Désactivez le bouton de commande et affichez un message
                     orderButton.disabled = true;
-                    // colorSelect.value = "";
+                    colorSelect.value = "";
                     sizeSelect.value = "";
-                    
+
                     alert("اللون الرمادي غير متوفر . المرجو إختيار لون آخر");
+                } else if ((selectedColor === 'SteelBlue' && selectedSize === 'L') || (selectedColor === 'Black' && selectedSize === 'XXL')) {
+                    orderButton.disabled = true;
+                    sizeSelect.value = "";
+                    alert('هذا اللون غير متوفر حاليا. سيصبح متوفرا خلال ثلاثة أيام.');
                 } else {
                     // Activez le bouton de commande si la condition n'est pas remplie
                     orderButton.disabled = false;
                 }
             }
->>>>>>> db3eabe429032847cd673a9bd6a2ccaf367887f8
 
+            // Vérifiez l'indisponibilité au chargement de la page
+            checkAvailability();
+
+            // Ajoutez un événement "change" aux sélecteurs de couleur et de taille
+            colorSelect.addEventListener("change", checkAvailability);
+            sizeSelect.addEventListener("change", checkAvailability);
+        });
     </script>
 
 
@@ -310,8 +310,6 @@ document.getElementById('save_guest_order').addEventListener('click', function(e
         body {
             touch-action: pan-y;
         }
-
-
     </style>
     <script class="u-script" type="text/javascript" src="clients_reviews/jquery-1.9.1.min.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="clients_reviews/nicepage.js" defer=""></script>
@@ -498,15 +496,15 @@ document.getElementById('save_guest_order').addEventListener('click', function(e
                     // Start auto-scroll on page load
                     startAutoScroll();
                 </script>
-				
-				<div class="container">
+
+                <div class="container">
                     <img src="https://cdn.shopify.com/s/files/1/0823/3821/8305/files/couleurs.jpg?v=1705182395"
                         alt="Image description">
-  
+
                 </div>
 
 
-<section id="PBS-47z7f1661723616426" class="section page-section title-section PBS-47z7f1661723616426"
+                <section id="PBS-47z7f1661723616426" class="section page-section title-section PBS-47z7f1661723616426"
                     style="background: #fff;">
                     <div class="inner-container">
                         <div class="inner-title" data-pb-debug="margin padding">
@@ -532,7 +530,7 @@ document.getElementById('save_guest_order').addEventListener('click', function(e
                         <div data-pb-debug="padding" class="page-builder-express-checkout-wrapper">
                             <div data-pb-section="PBS-qnim9k1632909988068" data-pb-field="express-checkout-form-header"
                                 data-pb-type="html-editor" data-pb-value="فقط ب" class="fr-view">
-                              
+
                             </div>
 
                             <div data-pb-section="PBS-qnim9k1632909988068" data-pb-field="express-checkout-form-header"
@@ -578,7 +576,7 @@ document.getElementById('save_guest_order').addEventListener('click', function(e
                                                             <option value="">المرجو إختيار الكمية</option>
                                                             <option value="1">واحد ب 249 درهم فقط</option>
                                                             <option value="2">إثنان ب 459 درهم فقط</option>
-															<option value="3">ثلاثة ب 649 درهم فقط</option>
+                                                            <option value="3">ثلاثة ب 649 درهم فقط</option>
                                                         </Select>
                                                     </div>
 
@@ -602,32 +600,31 @@ document.getElementById('save_guest_order').addEventListener('click', function(e
                                                             <!-- Add more color options as needed -->
                                                         </select>
                                                     </div>
-													
-													
 
-													<div class="form-group is-required">
-														<label class="form-label">الحجم</label>
-														<select required
-																oninvalid="this.setCustomValidity('المرجو اختيار الحجم');"
-																onchange="try{setCustomValidity('')}catch(e){};"
-																x-moz-errormessage="المرجو اختيار الحجم"
-																name="product_size"
-																id="product_size"
-																placeholder="الحجم">
-															<option value="">المرجو إختيار الحجم</option>
-															<option value="M">M (30-32)</option>
-															<option value="L">L (34)</option>
-															<option value="XL">XL (36)</option>
-															<option value="XXL">XXL (38-40)</option>
-															<!-- Add more sizes options as needed -->
-														</select>
-													</div>
+
+
+                                                    <div class="form-group is-required">
+                                                        <label class="form-label">الحجم</label>
+                                                        <select required
+                                                            oninvalid="this.setCustomValidity('المرجو اختيار الحجم');"
+                                                            onchange="try{setCustomValidity('')}catch(e){};"
+                                                            x-moz-errormessage="المرجو اختيار الحجم" name="product_size"
+                                                            id="product_size" placeholder="الحجم">
+                                                            <option value="">المرجو إختيار الحجم</option>
+                                                            <option value="M">M (30-32)</option>
+                                                            <option value="L">L (34)</option>
+                                                            <option value="XL">XL (36)</option>
+                                                            <option value="XXL">XXL (38-40)</option>
+                                                            <!-- Add more sizes options as needed -->
+                                                        </select>
+                                                    </div>
 
                                                     <!-- </div> -->
                                                     <input type="hidden" name="number_tier" id="number_tier" value="1">
                                                     <input type="hidden" name="price_tiers" id="price_tiers" value="">
-                                                    <div class="form-group is-required"><label class="form-label">الإسم الكامل
-                                                            </label> <input required
+                                                    <div class="form-group is-required"><label class="form-label">الإسم
+                                                            الكامل
+                                                        </label> <input required
                                                             oninvalid="this.setCustomValidity('المرجو إخال إسمك');"
                                                             onchange="try{setCustomValidity('')}catch(e){};"
                                                             x-moz-errormessage="المرجو دخال إسمك" type="text"
@@ -674,8 +671,10 @@ document.getElementById('save_guest_order').addEventListener('click', function(e
                     <img src="https://cdn.shopify.com/s/files/1/0823/3821/8305/files/PART1.jpg?v=1705181541"
                         alt="Image description">
                     <img src="https://cdn.shopify.com/s/files/1/0823/3821/8305/files/Pant1.gif?v=1702594760" alt="">
-					<img src="https://cdn.shopify.com/s/files/1/0823/3821/8305/files/bleu2_62cef79a-feba-4e0a-92cb-f92d46d9801b.jpg?v=1703961507" alt="">
-					<img src="https://cdn.shopify.com/s/files/1/0823/3821/8305/files/bleu_dc4d87db-39b1-406e-abf4-e8f08fe4d100.jpg?v=1703961507" alt="">
+                    <img src="https://cdn.shopify.com/s/files/1/0823/3821/8305/files/bleu2_62cef79a-feba-4e0a-92cb-f92d46d9801b.jpg?v=1703961507"
+                        alt="">
+                    <img src="https://cdn.shopify.com/s/files/1/0823/3821/8305/files/bleu_dc4d87db-39b1-406e-abf4-e8f08fe4d100.jpg?v=1703961507"
+                        alt="">
                     <img src="https://cdn.shopify.com/s/files/1/0823/3821/8305/files/pant2.jpg?v=1702594759" alt="">
                     <img src="https://cdn.shopify.com/s/files/1/0823/3821/8305/files/pant3.jpg?v=1702594759" alt="">
                     <img src="https://cdn.shopify.com/s/files/1/0823/3821/8305/files/pant4.jpg?v=1702594759" alt="">
@@ -690,21 +689,23 @@ document.getElementById('save_guest_order').addEventListener('click', function(e
                     <img src="https://cdn.shopify.com/s/files/1/0823/3821/8305/files/pant12.jpg?v=1702594759" alt="">
                     <img src="https://cdn.shopify.com/s/files/1/0823/3821/8305/files/pant13.jpg?v=1702594759" alt="">
                     <img src="https://cdn.shopify.com/s/files/1/0823/3821/8305/files/pant14.jpg?v=1702594759" alt="">
-                    <img src="https://cdn.shopify.com/s/files/1/0823/3821/8305/files/elastic_waste.jpg?v=1703959985" alt="">
+                    <img src="https://cdn.shopify.com/s/files/1/0823/3821/8305/files/elastic_waste.jpg?v=1703959985"
+                        alt="">
                     <img src="https://cdn.shopify.com/s/files/1/0823/3821/8305/files/pocket.jpg?v=1703959985" alt="">
                     <img src="https://cdn.shopify.com/s/files/1/0823/3821/8305/files/pant17.jpg?v=1703286877" alt="">
                     <!-- <img src="https://see.saileeshop.com/img/20231204/15241012103.gif?=0" alt="">
                     <img src="https://see.saileeshop.com/img/20231204/15241012103.gif?=0" alt=""> -->
                     <a href="#PBS-qnim9k1632909988068">
-                        <button id="fade_buy_btn_lead" class="overlay-button" style="top: 7.0%;">إشتري الآن ب 249 درهم فقط
-                            </button>
+                        <button id="fade_buy_btn_lead" class="overlay-button" style="top: 7.0%;">إشتري الآن ب 249 درهم
+                            فقط
+                        </button>
                     </a>
                     <a href="#PBS-qnim9k1632909988068">
                         <button id="fade_buy_btn_lead" class="overlay-button" style="top: 94%;
                         position: fixed;
                         padding: 15px 10px !important;
                         font-size: 21px;    ">إشتري الآن ب 249 درهم فقط
-                            </button>
+                        </button>
                     </a>
                 </div>
 
@@ -745,8 +746,9 @@ document.getElementById('save_guest_order').addEventListener('click', function(e
                                         <div
                                             class="u-container-style u-group u-radius-20 u-shape-round u-similar-fill u-white u-group-1">
                                             <div class="u-container-layout u-valign-middle u-container-layout-2">
-                                                <p class="u-align-left u-text u-text-black u-text-font u-text-2">طلبت واحد وصلني اليوم زوين بزاف و مريح
-                                                     </p>
+                                                <p class="u-align-left u-text u-text-black u-text-font u-text-2">طلبت
+                                                    واحد وصلني اليوم زوين بزاف و مريح
+                                                </p>
                                                 <h5
                                                     class="u-align-right u-custom-font u-heading-font u-text u-text-black u-text-3">
                                                     - علاء
@@ -764,7 +766,8 @@ document.getElementById('save_guest_order').addEventListener('click', function(e
                                             class="u-container-style u-group u-radius-20 u-shape-round u-similar-fill u-white u-group-2">
                                             <div class="u-container-layout u-valign-middle u-container-layout-4">
                                                 <p class="u-align-left u-text u-text-black u-text-font u-text-4">
-                                                سروال رائع، كيجي سواء مع الكلاس او سبور، كنمشي بيه الخدمة حيت مريح بزاف
+                                                    سروال رائع، كيجي سواء مع الكلاس او سبور، كنمشي بيه الخدمة حيت مريح
+                                                    بزاف
 
                                                 </p>
                                                 <h5
@@ -807,7 +810,7 @@ document.getElementById('save_guest_order').addEventListener('click', function(e
 
                 <section class="section page-section title-section" style="margin-top: 25px;">
                     <div class="inner-container countdown-container">
-                        
+
                         <h2 style="font-size: 21px; font-weight: 600;">تخفيض 50% و الشحن السريع بالمجان</h2>
                         <div id="countdown">
                             <div class="countdown-row">
@@ -963,7 +966,7 @@ document.getElementById('save_guest_order').addEventListener('click', function(e
                 price_tiers.value = "459";
                 // hiddenInput.value = "2";
                 currencyElement.innerText = "459";
-			} else if (selectedValue === "3") {
+            } else if (selectedValue === "3") {
                 price_tiers.value = "649";
                 // hiddenInput.value = "3";
                 currencyElement.innerText = "649";
