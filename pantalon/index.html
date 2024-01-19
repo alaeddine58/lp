@@ -91,36 +91,40 @@
 
     </script>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            var colorSelect = document.getElementById("product_color");
-            var sizeSelect = document.getElementById("product_size");
-            var orderButton = document.getElementById("save_guest_order");
+document.getElementById('save_guest_order').addEventListener('click', function(event) {
+    event.preventDefault(); // Empêcher l'envoi du formulaire pour le moment
 
-            function checkAvailability() {
-                var selectedColor = colorSelect.value;
-                var selectedSize = sizeSelect.value;
+    // Récupérer les valeurs sélectionnées par l'utilisateur
+    var selectedColor = document.getElementById('product_color').value;
+    var selectedSize = document.getElementById('product_size').value;
 
+<<<<<<< HEAD
+    // Logique de vérification de disponibilité
+    if (selectedColor === 'LightGrey') {
+        alert('اللون الرمادي غير متوفر. المرجو إختيار لون آخر.');
+    } else if ((selectedColor === 'Black' && selectedSize === 'L') || (selectedColor === 'SteelBlue' && selectedSize === 'XXL')) {
+        alert('هذا اللون غير متوفر حاليا. سيصبح متوفرا خلال ثلاثة أيام.');
+    } else {
+        // Si l'article est disponible, vous pouvez soumettre le formulaire
+        document.getElementById('formInfo').submit();
+    }
+});
+=======
                 // Vérifiez si la couleur est "LightGrey" et la taille est "M" ou "L"
-                if (selectedColor === "LightGrey" && (selectedSize === "M" || selectedSize === "L")) {
+                if (selectedColor === "LightGrey" ) {
                     // Désactivez le bouton de commande et affichez un message
                     orderButton.disabled = true;
                     // colorSelect.value = "";
                     sizeSelect.value = "";
                     
-                    alert("اللون الرمادي غير متوفر في هذا المقاس. المرجو إختيار لون آخر.");
+                    alert("اللون الرمادي غير متوفر . المرجو إختيار لون آخر");
                 } else {
                     // Activez le bouton de commande si la condition n'est pas remplie
                     orderButton.disabled = false;
                 }
             }
+>>>>>>> db3eabe429032847cd673a9bd6a2ccaf367887f8
 
-            // Vérifiez l'indisponibilité au chargement de la page
-            checkAvailability();
-
-            // Ajoutez un événement "change" aux sélecteurs de couleur et de taille
-            colorSelect.addEventListener("change", checkAvailability);
-            sizeSelect.addEventListener("change", checkAvailability);
-        });
     </script>
 
 
