@@ -582,6 +582,19 @@
 
                                                     <div class="form-group is-required">
 
+                                                        <div class="form-group is-required"><label class="form-label">عدد
+                                                            الطبقات</label>
+                                                        <Select required
+                                                            oninvalid="this.setCustomValidity('المرجو اختيار عدد الطبقات');"
+                                                            onchange="try{setCustomValidity('')}catch(e){};"
+                                                            x-moz-errormessage="المرجو اختيار عدد البقات" type="text"
+                                                            name="tier_variante" id="tier_variante"
+                                                            placeholder="عدد الطبقات">
+                                                            <option value="">المرجو إختيار الكمية</option>
+                                                            <option value="1">واحد ب 249 درهم فقط</option>
+                                                            <option value="2">إثنان ب 459 درهم فقط</option>
+                                                        </Select>
+                                                    </div>
 
                                                         <label class="form-label">لون المتج</label>
                                                         <select required
