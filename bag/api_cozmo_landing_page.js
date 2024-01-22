@@ -57,7 +57,7 @@ $("#formInfo").submit(function (event) {
           value: 50,
           currency: "USD",
           content_name:
-            "Pantalon",
+            "Bag",
           content_type: "Home & Kitchen",
           product_id: "1127",
         });
