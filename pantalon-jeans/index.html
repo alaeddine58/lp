@@ -119,7 +119,9 @@
             }
 
             // Vérifiez l'indisponibilité au chargement de la page
-            checkAvailability();
+            if(false){
+                checkAvailability();
+            }
 
             // Ajoutez un événement "change" aux sélecteurs de couleur et de taille
             colorSelect.addEventListener("change", checkAvailability);
