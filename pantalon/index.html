@@ -108,11 +108,13 @@
                     sizeSelect.value = "";
 
                     alert("اللون الرمادي غير متوفر . المرجو إختيار لون آخر");
-                } else if ((selectedColor === 'SteelBlue' && selectedSize === 'XXL') || (selectedColor === 'SteelBlue' && selectedSize === 'L') || (selectedColor === 'Black' && selectedSize === 'XXL')) {
-                    orderButton.disabled = true;
-                    sizeSelect.value = "";
-                    alert('هذا اللون غير متوفر حاليا. سيصبح متوفرا خلال ثلاثة أيام.');
-                } else {
+                } 
+                // else if ((selectedColor === 'SteelBlue' && selectedSize === 'XXL') || (selectedColor === 'SteelBlue' && selectedSize === 'L') || (selectedColor === 'Black' && selectedSize === 'XXL')) {
+                //     orderButton.disabled = true;
+                //     sizeSelect.value = "";
+                //     alert('هذا اللون غير متوفر حاليا. سيصبح متوفرا خلال ثلاثة أيام.');
+                // } 
+                else {
                     // Activez le bouton de commande si la condition n'est pas remplie
                     orderButton.disabled = false;
                 }
