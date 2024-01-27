@@ -18,6 +18,17 @@ $("#formInfo").submit(function (event) {
   var price = $('#formInfo input[name="price_tiers"]').val();
   var product_size = $('#formInfo select[name="product_size"]').val();
 
+  const dateObject = new Date();
+
+  const formattedDate = dateObject.toLocaleString('en-US', {
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+    hour12: false
+}).replace(/,/g, '');
+
 // Create the data object for SheetDB
   // var sheetDBData = {
   //   name: "Pantalon",
@@ -62,7 +73,7 @@ $("#formInfo").submit(function (event) {
     quantity: variant,
     color: product_color,
     size: product_size,
-    createdAt: new Date().toString(),
+    createdAt: formattedDate,
     status: "pending",
   };
 
