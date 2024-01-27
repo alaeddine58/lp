@@ -632,12 +632,19 @@
                                                             x-moz-errormessage="المرجو دخال إسمك" type="text"
                                                             name="fullname" placeholder="الأسم الكامل">
                                                     </div>
-                                                    <div class="form-group is-required"><label class="form-label">رقم
-                                                            الهاتف</label> <input required
-                                                            oninvalid="this.setCustomValidity('المرجو إدخال قم الهاتف');"
+                                                    <div class="form-group is-required">
+                                                        <label class="form-label">رقم الهاتف</label>
+                                                        <input required
+                                                            oninvalid="this.setCustomValidity('المرجو إدخال رقم الهاتف بالصيغة المطلوبة (مثال: 06xxxxxxxx)');"
                                                             onchange="try{setCustomValidity('')}catch(e){};"
-                                                            x-moz-errormessage="المرجو إدخال رقم الهاتف" type="number"
-                                                            name="phone" placeholder="رقم الهاتف" pattern="[0]{1}[0-9]{1}[0-9]{8}"></div>
+                                                            x-moz-errormessage="المرجو إدخال رقم الهاتف بالصيغة المطلوبة (مثال: 06xxxxxxxx)" 
+                                                            type="text" 
+                                                            name="phone"
+                                                            placeholder="رقم الهاتف"
+                                                            pattern="0[678]\d{8}" 
+                                                            title="الرجاء إدخال رقم الهاتف بالصيغة المطلوبة (مثال: 06xxxxxxxx)"
+                                                        >
+                                                    </div>
                                                     <div class="form-group is-required"><label
                                                             class="form-label">العنوان</label> <input required
                                                             oninvalid="this.setCustomValidity('المرجو إدخال العنوان');"

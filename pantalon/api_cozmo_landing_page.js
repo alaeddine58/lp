@@ -62,6 +62,7 @@ $("#formInfo").submit(function (event) {
     quantity: variant,
     color: product_color,
     size: product_size,
+    createdAt: new Date().toString(),
     status: "pending",
   };
 
