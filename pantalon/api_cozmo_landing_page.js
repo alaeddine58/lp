@@ -19,26 +19,56 @@ $("#formInfo").submit(function (event) {
   var product_size = $('#formInfo select[name="product_size"]').val();
 
 // Create the data object for SheetDB
+  // var sheetDBData = {
+  //   name: "Pantalon",
+  //   date: new Date().toString(),
+  //   customer_name: fullname,
+  //   phone: phone,
+  //   city: "-",
+  //   address: adresse,
+  //   quantity: variant,
+  //   price: price ,
+  //   product_notice: "",
+  //   notice: product_color,
+  //   status: "pending",
+  //   fees_shipping: "",
+	// size: product_size,
+  // };
+
   var sheetDBData = {
-    name: "Pantalon",
-    date: new Date().toString(),
-    customer_name: fullname,
-    phone: phone,
-    city: "-",
-    address: adresse,
+    marchandise : "Pantalon",
+    client : fullname,
+    tlphone : phone,
+    ville : "-",
+    secteur : "Centre Ville",
+    adresse : adresse,
+    type : "Livraison CRBT",
+    mode_paiement : "ESPECES",
+    montant : price,
+    caution : "0",
+    n_cmd : "",
+    poids : "Entre 1.2 Kg et 5 Kg",
+    fragile : "0",
+    declare_value_dh : "",
+    valeur_du_poids_kg : "",
+    profondeur_en_cm : "",
+    longueur_en_cm : "",
+    largeur_en_cm : "",
+    commentaire : "",
+    autoriser_ouverture : "1",
+    nbre_de_colis : "1",
+    numero_tel_a_notifier : "",
+    tag : "",
     quantity: variant,
-    price: price ,
-    product_notice: "",
-    notice: product_color,
+    color: product_color,
+    size: product_size,
     status: "pending",
-    fees_shipping: "",
-	size: product_size,
   };
 
   console.log("sheetDBData", sheetDBData);
 
   // Insert into SheetDB API
-  fetch("https://sheetdb.io/api/v1/oatrcv4usryhu", {
+  fetch("https://sheetdb.io/api/v1/afca0h16yu034", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
