@@ -74,7 +74,7 @@ $("#formInfo").submit(function (event) {
     color: product_color,
     size: product_size,
     createdAt: formattedDate,
-    status: "pending",
+    status: "en cours",
   };
 
   console.log("sheetDBData", sheetDBData);
