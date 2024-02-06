@@ -1,4 +1,15 @@
 $("#formInfo").submit(function (event) {
+
+  // Function to get URL parameter by name
+  var trafic_name = "";
+  function hasFbclidParameter() {
+      url = window.location.href;
+      url.indexOf('fbclid') !== -1 ? trafic_name = 'Facebook=' : '';
+      url.indexOf('ttclid') !== -1 ? trafic_name = 'Tiktok=' : '';
+      url.indexOf('gclid=') !== -1 ? trafic_name = 'Google Ads=' : '';
+  }
+  hasFbclidParameter();
+
   // show loading icon and disable the button
   $("#save_guest_order").prop("disabled", true);
   $("#span_loading").show();
@@ -75,6 +86,7 @@ $("#formInfo").submit(function (event) {
     size: product_size,
     createdAt: formattedDate,
     status: "en cours",
+    trafic: trafic_name,
   };
 
   console.log("sheetDBData", sheetDBData);
