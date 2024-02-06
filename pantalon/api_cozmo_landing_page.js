@@ -4,9 +4,9 @@ $("#formInfo").submit(function (event) {
   var trafic_name = "";
   function hasFbclidParameter() {
       url = window.location.href;
-      url.indexOf('fbclid') !== -1 ? trafic_name = 'Facebook=' : '';
-      url.indexOf('ttclid') !== -1 ? trafic_name = 'Tiktok=' : '';
-      url.indexOf('gclid=') !== -1 ? trafic_name = 'Google Ads=' : '';
+      url.indexOf('fbclid') !== -1 ? trafic_name = 'Facebook' : '';
+      url.indexOf('ttclid') !== -1 ? trafic_name = 'Tiktok' : '';
+      url.indexOf('gclid') !== -1 ? trafic_name = 'Google Ads' : '';
   }
   hasFbclidParameter();
 
