@@ -20,22 +20,19 @@ $("#formInfo").submit(function (event) {
 
   // Create the data object for SheetDB
   var sheetDBData = {
+    name: "Running Shoes",
     date: new Date().toString(),
-    Marchandise: "Running Shoes",
-    Client: fullname,
-    Tlphone: phone,
-    Ville: "-",
-    Secteur: "-",
+    customer_name: fullname,
+    phone: phone,
+    city: "-",
     address: adresse,
-    Type: "Livraison CRBT",
-    Mode_Paiement: "ESPECES",
     quantity: variant,
     price: price,
     product_notice: "",
-    Couleur: product_color,
+    notice: product_color,
     status: "pending",
-    size: product_size,
     fees_shipping: "",
+    size: product_size,
   };
 
   console.log("sheetDBData", sheetDBData);
@@ -65,7 +62,7 @@ $("#formInfo").submit(function (event) {
           product_id: "1127",
         });
 
-        document.location.href = "running_shoes/order_success.html";
+        document.location.href = "/running_shoes/order_success.html";
         // To track the purchase event using Snap Pixel
         // snaptr("track", "PURCHASE", { value: 132, currency: "USD" });
       } else {
