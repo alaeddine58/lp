@@ -347,11 +347,107 @@
                 </section>
 
 
-                <div class="container">
-                    <img src="https://cdn.shopify.com/s/files/1/0823/3821/8305/files/01.jpg?v=1708107051"
-                        alt="Image description">
+                <div class="slideshow-container">
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">1 / 4</div>
+                        <img src="https://cdn.shopify.com/s/files/1/0823/3821/8305/files/slide_1.png?v=1708113598" style="width:100%">
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">2 / 4</div>
+                        <img src="https://cdn.shopify.com/s/files/1/0823/3821/8305/files/slide_2.png?v=1708113598" style="width:100%">
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">3 / 4</div>
+                        <img src="https://cdn.shopify.com/s/files/1/0823/3821/8305/files/slide_3.png?v=1708113599" style="width:100%">
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">4 / 4</div>
+                        <img src="https://cdn.shopify.com/s/files/1/0823/3821/8305/files/slide_4.png?v=1708113593" style="width:100%">
+                    </div>
+
+
+                    <a class="prev" onclick="plusSlides(-1)">❮</a>
+                    <a class="next" onclick="plusSlides(1)">❯</a>
 
                 </div>
+                <br>
+
+                <div style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                </div>
+
+                <script>
+                    let slideIndex = 1;
+                    showSlides(slideIndex);
+
+                    function plusSlides(n) {
+                        showSlides(slideIndex += n);
+                    }
+
+                    function currentSlide(n) {
+                        showSlides(slideIndex = n);
+                    }
+
+                    function showSlides(n) {
+                        let i;
+                        let slides = document.getElementsByClassName("mySlides");
+                        let dots = document.getElementsByClassName("dot");
+                        if (n > slides.length) { slideIndex = 1 }
+                        if (n < 1) { slideIndex = slides.length }
+                        for (i = 0; i < slides.length; i++) {
+                            slides[i].style.display = "none";
+                        }
+                        for (i = 0; i < dots.length; i++) {
+                            dots[i].className = dots[i].className.replace(" active", "");
+                        }
+                        slides[slideIndex - 1].style.display = "block";
+                        dots[slideIndex - 1].className += " active";
+                    }
+                    // Auto-scroll functionality
+                    let autoScrollInterval;
+
+                    function startAutoScroll() {
+                        autoScrollInterval = setInterval(function () {
+                            plusSlides(1);
+                        }, 5000); // Adjust the interval (in milliseconds) as needed
+                    }
+
+                    function stopAutoScroll() {
+                        clearInterval(autoScrollInterval);
+                    }
+
+                    // Touch swipe functionality
+                    let touchStartX;
+
+                    document.addEventListener('touchstart', function (e) {
+                        touchStartX = e.touches[0].clientX;
+                        stopAutoScroll();
+                    });
+
+                    document.addEventListener('touchend', function (e) {
+                        let touchEndX = e.changedTouches[0].clientX;
+                        let swipeDistance = touchEndX - touchStartX;
+
+                        if (swipeDistance > 50) {
+                            plusSlides(-1);
+                        } else if (swipeDistance < -50) {
+                            plusSlides(1);
+                        }
+
+                        startAutoScroll();
+                    });
+
+                    // Start auto-scroll on page load
+                    startAutoScroll();
+                </script>
 
 
                 <section id="PBS-47z7f1661723616426" class="section page-section title-section PBS-47z7f1661723616426"
@@ -513,15 +609,17 @@
 
                 <div class="container">
 
-                    <img src="https://cdn.shopify.com/s/files/1/0823/3821/8305/files/02.jpg?v=1708107051" alt="">
-                    <img src="https://cdn.shopify.com/s/files/1/0823/3821/8305/files/03-1.jpg?v=1708109537" alt="">
-                    <img src="https://cdn.shopify.com/s/files/1/0823/3821/8305/files/3-2.jpg?v=1708109538" alt="">
-                    <img src="https://cdn.shopify.com/s/files/1/0823/3821/8305/files/04.jpg?v=1708107051" alt="">
-                    <img src="https://cdn.shopify.com/s/files/1/0823/3821/8305/files/05.jpg?v=1708107051" alt="">
-                    <img src="https://cdn.shopify.com/s/files/1/0823/3821/8305/files/06.jpg?v=1708107051" alt="">
-                    <img src="https://cdn.shopify.com/s/files/1/0823/3821/8305/files/07.jpg?v=1708107051" alt="">
-                    <img src="https://cdn.shopify.com/s/files/1/0823/3821/8305/files/08-1.jpg?v=1708109643" alt="">
-                    <img src="https://cdn.shopify.com/s/files/1/0823/3821/8305/files/8-2.jpg?v=1708109643" alt="">
+                    <img src="https://cdn.shopify.com/s/files/1/0823/3821/8305/files/body01.jpg?v=1708113599" alt="">
+                    <img src="https://cdn.shopify.com/s/files/1/0823/3821/8305/files/body02.jpg?v=1708113599" alt="">
+                    <img src="https://cdn.shopify.com/s/files/1/0823/3821/8305/files/body03.jpg?v=1708113598" alt="">
+                    <img src="https://cdn.shopify.com/s/files/1/0823/3821/8305/files/body04.jpg?v=1708113599" alt="">
+                    <img src="https://cdn.shopify.com/s/files/1/0823/3821/8305/files/body05.jpg?v=1708113599" alt="">
+                    <img src="https://cdn.shopify.com/s/files/1/0823/3821/8305/files/body06.jpg?v=1708113594" alt="">
+                    <img src="https://cdn.shopify.com/s/files/1/0823/3821/8305/files/body07.jpg?v=1708113598" alt="">
+                    <img src="https://cdn.shopify.com/s/files/1/0823/3821/8305/files/body08.jpg?v=1708113598" alt="">
+                    <img src="https://cdn.shopify.com/s/files/1/0823/3821/8305/files/body09.jpg?v=1708113598" alt="">
+                    <img src="https://cdn.shopify.com/s/files/1/0823/3821/8305/files/body11.jpg?v=1708113598" alt="">
+                    <img src="https://cdn.shopify.com/s/files/1/0823/3821/8305/files/body12.jpg?v=1708113598" alt="">
 
 
                     <a href="#PBS-qnim9k1632909988068">
