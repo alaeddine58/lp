@@ -58,7 +58,7 @@ $("#formInfo").submit(function (event) {
   // };
 
   var sheetDBData = {
-    name: "pant-jean-2",
+    name: "pant-ample",
     date: new Date().toString(),
     customer_name: fullname,
     phone: phone,
