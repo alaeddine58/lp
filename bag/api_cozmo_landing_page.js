@@ -39,7 +39,7 @@ $("#formInfo").submit(function (event) {
 
   // Insert into SheetDB API
   // fetch("https://sheetdb.io/api/v1/oatrcv4usryhu", {
-  fetch("https://script.google.com/macros/s/AKfycbzwv3yV2ajXIyhBqknmY6kYZUZaCqOiNwU_EKkpOLOHg4BrK_hK1n695iK40HgOwClmHA/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbzjWrxJ9yPx2RsZOxbI9ILxfr1k2v23KRam932uq1q7hzz_V7bH4M5w2cZJYcRs9hbn9A/exec", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
