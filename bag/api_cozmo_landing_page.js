@@ -42,8 +42,8 @@ $("#formInfo").submit(function (event) {
   fetch("https://script.google.com/macros/s/AKfycbweTcnmq0isyX3NrF5Hj4AipE73mqWPMDYEqt3-gXiPX0VKfstJ8L_2eHREkfkWuOVf7A/exec", {
     method: "POST",
     headers: {
-      "Content-Type": "text/plain;charset=utf-8",
-      // "Content-Type": "application/json",
+      // "Content-Type": "text/plain;charset=utf-8",
+      "Content-Type": "application/json",
       // "Access-Control-Allow-Origin": "*",
       // "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
       // "Access-Control-Allow-Headers": "Content-Type",
