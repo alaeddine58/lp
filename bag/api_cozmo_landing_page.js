@@ -11,8 +11,10 @@ $("#formInfo").submit(function (event) {
   var phone = $('#formInfo input[name="phone"]').val();
   var adresse = $('#formInfo input[name="adresse"]').val();
 
+
   var variant = $('#formInfo select[name="tier_variante"]').val();
   var product_color = $('#formInfo select[name="product_color"]').val();
+  // var number_tier = $('#formInfo input[name="number_tier"]').val();
   var price = $('#formInfo input[name="price_tiers"]').val();
   var product_size = $('#formInfo select[name="product_size"]').val();
 
@@ -36,12 +38,17 @@ $("#formInfo").submit(function (event) {
   console.log("sheetDBData", sheetDBData);
 
   // Insert into SheetDB API
+  // fetch("https://sheetdb.io/api/v1/oatrcv4usryhu", {
   fetch("https://script.google.com/macros/s/AKfycbxZtrGOnLp5BcJ2i-GGL_R2o3t814PM2XZA2I8PKuJbCiLp7_jJn-MLazJR3JddAFWVDA/exec", {
     method: "POST",
     headers: {
-      "Content-Type": "application/json", // Correct Content-Type
+      // "Content-Type": "text/plain;charset=utf-8",
+      "Content-Type": "application/json",
+      // "Access-Control-Allow-Origin": "*",
+      // "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+      // "Access-Control-Allow-Headers": "Content-Type",
     },
-    body: JSON.stringify(sheetDBData), // Just send the object directly
+    body: JSON.stringify({ data: sheetDBData }),
   })
     .then(function (response) {
       console.log("response", response);
@@ -54,7 +61,8 @@ $("#formInfo").submit(function (event) {
         fbq("track", "Purchase", {
           value: 50,
           currency: "USD",
-          content_name: "Bag",
+          content_name:
+            "Bag",
           content_type: "Home & Kitchen",
           product_id: "1127",
         });
@@ -83,4 +91,33 @@ $("#formInfo").submit(function (event) {
       // Display an error message if the request fails
       // alert("Failed to add order to SheetDB. Please try again later.");
     });
+
+  // $.ajax({
+  //   url: "https://novamart-officiel.com/api/ordervisite",
+  //   type: "POST",
+  //   headers: {
+  //     "Access-Control-Allow-Origin": "*",
+  //   },
+  //   cors: true,
+  //   data: {
+  //     first_name: fullname,
+  //     last_name: "",
+  //     phone: phone,
+  //     city: "",
+  //     adresse: adresse,
+  //     id_product: "1135",
+  //     name_product: "Pantalon",
+  //     unit_price: price,
+  //     quantite: variant,
+  //     variant: ""+product_color + product_size,
+  //     from_landing_page: true,
+  //   },
+  //   success: function (response) {
+  //     document.location.href = "/bag/order_success.html";
+  //     console.log("response", response);
+  //   },
+  //   error: function (xhr, status, error) {
+  //     document.location.href = "/bag/order_success.html";
+  //   },
+  // });
 });
