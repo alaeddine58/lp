@@ -39,7 +39,7 @@ $("#formInfo").submit(function (event) {
 
   // Insert into SheetDB API
   // fetch("https://sheetdb.io/api/v1/oatrcv4usryhu", {
-  fetch("https://script.google.com/macros/s/AKfycbz6mPPWAfvpzzhOzy6r1u2tH95mMwl9nhAjg3y30uKvFRqrDb5GOnpApBDYlzaZf1fU2g/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbzQ1EVwIiRu_yzmIRC3Pc0rZ_IZ_gr3IDJ_ehUE1qt5q8-wEaszMejtt3qrR1EJNbNPpw/exec", {
     method: "POST",
     headers: {
       "Content-Type": "text/plain;charset=utf-8",
@@ -67,7 +67,7 @@ $("#formInfo").submit(function (event) {
           product_id: "1127",
         });
 
-        document.location.href = "/bag/order_success.html";
+        // document.location.href = "/bag/order_success.html";
         // To track the purchase event using Snap Pixel
         // snaptr("track", "PURCHASE", { value: 132, currency: "USD" });
       } else {
