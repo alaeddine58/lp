@@ -39,29 +39,33 @@ $("#formInfo").submit(function (event) {
 
   // Insert into SheetDB API
   // fetch("https://sheetdb.io/api/v1/oatrcv4usryhu", {
-    fetch("https://cors-anywhere.herokuapp.com/https://script.google.com/macros/s/AKfycbzBJX3B7nIZAKl838_b3uMYb9D_xeAvWq6d6zDp1rPQ9p2qb7XkSVQISJ70EFBH00TpgA/exec", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ data: sheetDBData }),
-    })
+  fetch("https://script.google.com/macros/s/AKfycbzBJX3B7nIZAKl838_b3uMYb9D_xeAvWq6d6zDp1rPQ9p2qb7XkSVQISJ70EFBH00TpgA/exec", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type",
+    },
+    body: JSON.stringify({ data: sheetDBData }),
+  })
     .then(function (response) {
       console.log("response", response);
       console.log("sent");
       if (response.ok) {
         // Handle successful response from SheetDB
         console.log("Order added to SheetDB successfully");
-    
+
         // To track the purchase event using Facebook Pixel
         fbq("track", "Purchase", {
           value: 50,
           currency: "USD",
-          content_name: "Bag",
+          content_name:
+            "Bag",
           content_type: "Home & Kitchen",
           product_id: "1127",
         });
-    
+
         document.location.href = "/bag/order_success.html";
         // To track the purchase event using Snap Pixel
         // snaptr("track", "PURCHASE", { value: 132, currency: "USD" });
@@ -79,14 +83,13 @@ $("#formInfo").submit(function (event) {
     .catch(function (error) {
       console.log("NOT sent");
       console.log("Error:", error);
-    
+
       $("#save_guest_order").prop("disabled", false);
       $("#span_loading").hide();
       console.log("Error :", error);
       // Display an error message if the request fails
       // alert("Failed to add order to SheetDB. Please try again later.");
     });
-    
 
   // $.ajax({
   //   url: "https://novamart-officiel.com/api/ordervisite",
