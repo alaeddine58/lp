@@ -39,17 +39,11 @@ $("#formInfo").submit(function (event) {
     },
     body: formData
   })
-    .then(function (response) {
-      // Handle response
-      if (response.ok) {
-        // Handle successful response
-        console.log("Order added to SheetDB successfully");
-        // Redirect or perform other actions
-      } else {
-        // Handle error response
-        console.log("Failed to add order to SheetDB");
-      }
-    })
+  .then(response => response.json())
+  .then(data => {
+    console.log("data")
+    // result.innerText = JSON.stringify(data, null, 2);
+  })
     .catch(function (error) {
       // Handle fetch error
       console.log("Error:", error);
