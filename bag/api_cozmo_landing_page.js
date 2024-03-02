@@ -48,6 +48,7 @@ $("#formInfo").submit(function (event) {
       // "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
       // "Access-Control-Allow-Headers": "Content-Type",
     },
+    mode: "no-cors", // Add this line to fetch request
     body: JSON.stringify({ data: sheetDBData }),
   })
     .then(function (response) {
