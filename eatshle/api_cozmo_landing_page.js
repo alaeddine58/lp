@@ -1,4 +1,14 @@
 $("#formInfo").submit(function (event) {
+  // Function to get URL parameter by name
+  var trafic_name = "";
+  function hasFbclidParameter() {
+      url = window.location.href;
+      url.indexOf('fbclid') !== -1 ? trafic_name = 'Facebook' : '';
+      url.indexOf('ttclid') !== -1 ? trafic_name = 'Tiktok' : '';
+      url.indexOf('gclid') !== -1 ? trafic_name = 'Google Ads' : '';
+  }
+  hasFbclidParameter();
+  
   // show loading icon and disable the button
   $("#save_guest_order").prop("disabled", true);
   $("#span_loading").show();
@@ -20,28 +30,41 @@ $("#formInfo").submit(function (event) {
 
 // Create the data object for SheetDB
   var sheetDBData = {
-    date: new Date().toString(),
-	Marchandise: "Eatshle",
-    Client: fullname,
-    Tlphone: phone,
-    Ville: "-",
-	Secteur: "-",
-    address: adresse,
-	Type: "Livraison CRBT",
-	Mode_Paiement: "ESPECES",
+    marchandise : "Eatshle",
+    client : fullname,
+    tlphone : phone,
+    ville : "-",
+    secteur : "Centre Ville",
+    adresse : adresse,
+    type : "Livraison CRBT",
+    mode_paiement : "ESPECES",
+    montant : price,
+    caution : "0",
+    n_cmd : "",
+    poids : "Entre 1.2 Kg et 5 Kg",
+    fragile : "0",
+    declare_value_dh : "",
+    valeur_du_poids_kg : "",
+    profondeur_en_cm : "",
+    longueur_en_cm : "",
+    largeur_en_cm : "",
+    commentaire : "",
+    autoriser_ouverture : "1",
+    nbre_de_colis : "1",
+    numero_tel_a_notifier : "",
+    tag : "",
     quantity: variant,
-    price: price,
-    product_notice: "",
-    Couleur:product_color,
-    status: "pending",
-	size: product_size,
-    fees_shipping: "",
+    color: product_color,
+    size: product_size,
+    createdAt: formattedDate,
+    status: "en cours",
+    trafic: trafic_name,
   };
 
   console.log("sheetDBData", sheetDBData);
 
   // Insert into SheetDB API
-  fetch("https://sheetdb.io/api/v1/2ajq2lqfz4k6y", {
+  fetch("https://sheetdb.io/api/v1/9ck3owwv3wurm", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
