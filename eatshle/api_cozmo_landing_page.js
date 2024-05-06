@@ -58,7 +58,7 @@ $("#formInfo").submit(function (event) {
   // };
 
   var sheetDBData = {
-    marchandise : "Pantalon",
+    marchandise : "Eatshle",
     client : fullname,
     tlphone : phone,
     ville : "-",
