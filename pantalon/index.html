@@ -136,6 +136,22 @@
             sizeSelect.addEventListener("change", checkAvailability);
         });
     </script>-->
+	
+	<!-- hide sticky button-->
+	<script>
+        window.addEventListener('scroll', function() {
+            const stickyButton = document.getElementById('fade_buy_btn_lead');
+            const targetSection = document.getElementById('PBS-qnim9k1632909988068');
+            const sectionTop = targetSection.getBoundingClientRect().top;
+            const sectionBottom = targetSection.getBoundingClientRect().bottom;
+
+            if (sectionTop <= window.innerHeight && sectionBottom >= 0) {
+                stickyButton.classList.add('hidden');
+            } else {
+                stickyButton.classList.remove('hidden');
+            }
+        });
+    </script>
 
 
 
@@ -319,6 +335,9 @@
         /* Improved touch responsiveness */
         body {
             touch-action: pan-y;
+        }
+		.hidden {
+            display: none;
         }
     </style>
     <script class="u-script" type="text/javascript" src="clients_reviews/jquery-1.9.1.min.js" defer=""></script>
