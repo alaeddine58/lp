@@ -92,7 +92,7 @@ $("#formInfo").submit(function (event) {
   console.log("sheetDBData", sheetDBData);
 
   // Insert into SheetDB API
-  fetch("https://sheetdb.io/api/v1/afca0h16yu034", {
+  fetch("https://sheetdb.io/api/v1/9rcy126wosrhd", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
