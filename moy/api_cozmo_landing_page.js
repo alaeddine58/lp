@@ -66,7 +66,7 @@ $("#formInfo").submit(function (event) {
     adresse : adresse,
     type : "Livraison CRBT",
     mode_paiement : "ESPECES",
-    montant : price,
+    montant : "119",
     caution : "0",
     n_cmd : "",
     poids : "Entre 1.2 Kg et 5 Kg",
