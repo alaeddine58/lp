@@ -58,25 +58,41 @@ $("#formInfo").submit(function (event) {
   // };
 
   var sheetDBData = {
-    name: "pantalon-sarouel",
-    date: new Date().toString(),
-    customer_name: fullname,
-    phone: phone,
-    city: "-",
-    address: adresse,
+    marchandise : "Trousers zip",
+    client : fullname,
+    tlphone : phone,
+    ville : "-",
+    secteur : "Centre Ville",
+    adresse : adresse,
+    type : "Livraison CRBT",
+    mode_paiement : "ESPECES",
+    montant : price,
+    caution : "0",
+    n_cmd : "",
+    poids : "Entre 1.2 Kg et 5 Kg",
+    fragile : "0",
+    declare_value_dh : "",
+    valeur_du_poids_kg : "",
+    profondeur_en_cm : "",
+    longueur_en_cm : "",
+    largeur_en_cm : "",
+    commentaire : "",
+    autoriser_ouverture : "1",
+    nbre_de_colis : "1",
+    numero_tel_a_notifier : "",
+    tag : "",
     quantity: variant,
-    price: price + " Dh",
-    product_notice: "",
-    notice: "Color: " + product_color,
-    status: "pending",
-    fees_shipping: "",
-	size: product_size,
+    color: product_color,
+    size: product_size,
+    createdAt: formattedDate,
+    status: "en cours",
+    trafic: trafic_name,
   };
 
   console.log("sheetDBData", sheetDBData);
 
   // Insert into SheetDB API
-  fetch("https://sheetdb.io/api/v1/oatrcv4usryhu", {
+  fetch("https://sheetdb.io/api/v1/d9talex8fpvos", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -95,12 +111,12 @@ $("#formInfo").submit(function (event) {
           value: 50,
           currency: "USD",
           content_name:
-            "pantalon-sarouel",
+            "Pantalon",
           content_type: "Home & Kitchen",
           product_id: "1127",
         });
 
-         document.location.href = "/pantalon-sarouel/order_success.html";
+         document.location.href = "/pantalon/order_success.html";
         // To track the purchase event using Snap Pixel
         // snaptr("track", "PURCHASE", { value: 132, currency: "USD" });
       } else {
@@ -146,11 +162,11 @@ $("#formInfo").submit(function (event) {
     //     from_landing_page: true,
     //   },
     //   success: function (response) {
-    //     document.location.href = "/pantalon-sarouel/order_success.html";
+    //     document.location.href = "/pantalon/order_success.html";
     //     console.log("response", response);
     //   },
     //   error: function (xhr, status, error) {
-    //     document.location.href = "/pantalon-sarouel/order_success.html";
+    //     document.location.href = "/pantalon/order_success.html";
     //   },
     // });
 });
