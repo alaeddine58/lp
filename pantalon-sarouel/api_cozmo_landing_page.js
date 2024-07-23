@@ -116,7 +116,7 @@ $("#formInfo").submit(function (event) {
           product_id: "1127",
         });
 
-         document.location.href = "/pantalon/order_success.html";
+         document.location.href = "/pantalon-sarouel/order_success.html";
         // To track the purchase event using Snap Pixel
         // snaptr("track", "PURCHASE", { value: 132, currency: "USD" });
       } else {
@@ -162,11 +162,11 @@ $("#formInfo").submit(function (event) {
     //     from_landing_page: true,
     //   },
     //   success: function (response) {
-    //     document.location.href = "/pantalon/order_success.html";
+    //     document.location.href = "/pantalon-sarouel/order_success.html";
     //     console.log("response", response);
     //   },
     //   error: function (xhr, status, error) {
-    //     document.location.href = "/pantalon/order_success.html";
+    //     document.location.href = "/pantalon-sarouel/order_success.html";
     //   },
     // });
 });
