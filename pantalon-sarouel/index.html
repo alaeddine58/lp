@@ -26,6 +26,22 @@
 
     <link href="css/root.css" rel="stylesheet">
     <link href="css/store_font.css" rel="stylesheet">
+	
+		<!-- hide sticky button-->
+	<script>
+        window.addEventListener('scroll', function() {
+            const stickyButton = document.getElementById('fade_buy_btn_lead');
+            const targetSection = document.getElementById('PBS-qnim9k1632909988068');
+            const sectionTop = targetSection.getBoundingClientRect().top;
+            const sectionBottom = targetSection.getBoundingClientRect().bottom;
+
+            if (sectionTop <= window.innerHeight && sectionBottom >= 0) {
+                stickyButton.classList.add('hidden');
+            } else {
+                stickyButton.classList.remove('hidden');
+            }
+        });
+    </script>
 
     <script>
         !function (w, d, t) {
@@ -683,10 +699,10 @@
                     <img src="https://cdn.shopify.com/s/files/1/0823/3821/8305/files/pant17.jpg?v=1703286877" alt="">
                     <!-- <img src="https://see.saileeshop.com/img/20231204/15241012103.gif?=0" alt="">
                     <img src="https://see.saileeshop.com/img/20231204/15241012103.gif?=0" alt=""> -->
-                    <a href="#PBS-qnim9k1632909988068">
+                    <!--<a href="#PBS-qnim9k1632909988068">
                         <button id="fade_buy_btn_lead" class="overlay-button" style="top: 7.5%;">إشتري الآن ب 249 درهم فقط
                         </button>
-                    </a>
+                    </a>-->
                     <a href="#PBS-qnim9k1632909988068">
                         <button id="fade_buy_btn_lead" class="overlay-button" style="top: 94%;z-index: 999;
                         position: fixed;
