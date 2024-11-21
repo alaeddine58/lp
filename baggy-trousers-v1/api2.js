@@ -105,8 +105,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     total = 289;
                     quantity = 2;
                     break;
-                case 'إثنان ب 378 درهم + الثالث مجانا':
-                    total = 378;
+                case 'إثنان ب 329 درهم + الثالث مجانا':
+                    total = 329;
                     quantity = 3;
                     break;
                 default:
