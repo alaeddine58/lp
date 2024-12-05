@@ -104,6 +104,10 @@ document.addEventListener("DOMContentLoaded", function () {
                     total = 169;
                     quantity = 1;
                     break;
+					case 'واحد + الثاني بالمجان':
+                    total = 249;
+                    quantity = 1;
+                    break;
                 case 'إثنان + الثالث مجانا ب 329': 
                     total = 329;
                     quantity = 3;
@@ -131,7 +135,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const sizesString = sizes.join(', ');
 
         var sheetDBData = {
-            marchandise: "Pantalon",
+            marchandise: "Sweatshirt",
             client: fullname,
             tlphone: phone,
             ville: "-",
@@ -164,7 +168,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         console.log("sheetDBData", sheetDBData);
 
-        fetch("https://sheetdb.io/api/v1/ei6ndxolykn31", {
+        fetch("https://sheetdb.io/api/v1/9ck3owwv3wurm", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
