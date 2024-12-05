@@ -100,7 +100,12 @@ document.addEventListener("DOMContentLoaded", function () {
             const packHeader = packDetailsVisible.previousElementSibling.querySelector('.title').textContent;
 
             switch (packHeader) {
-                case 'واحد + الثاني بالمجان':
+                
+				case 'PACK x1 à 179 MAD':
+                    total = 249;
+                    quantity = 2;
+                    break;
+				case 'واحد + الثاني بالمجان':
                     total = 249;
                     quantity = 2;
                     break;
