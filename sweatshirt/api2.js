@@ -100,16 +100,16 @@ document.addEventListener("DOMContentLoaded", function () {
             const packHeader = packDetailsVisible.previousElementSibling.querySelector('.title').textContent;
 
             switch (packHeader) {
-                case 'واحد ب 189 درهم':
-                    total = 189;
+                case 'واحد ب 179 درهم':
+                    total = 179;
                     quantity = 1;
                     break;
 					case 'واحد + الثاني بالمجان':
                     total = 249;
                     quantity = 1;
                     break;
-                case 'إثنان + الثالث مجانا ب 378': 
-                    total = 378;
+                case 'إثنان + الثالث مجانا ب 338': 
+                    total = 338;
                     quantity = 3;
                     break;
                 default:
