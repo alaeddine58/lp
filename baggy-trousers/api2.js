@@ -101,12 +101,12 @@ document.addEventListener("DOMContentLoaded", function () {
                     total = 189;
                     quantity = 1;
                     break;
-                case 'إثنان ب 289 فقط':
-                    total = 289;
+                case 'إثنان ب 329 فقط':
+                    total = 329;
                     quantity = 2;
                     break;
-                case 'ثلاثة سراويل ب 349 درهم فقط':
-                    total = 349;
+                case 'ثلاثة سراويل ب 449 درهم فقط':
+                    total = 449;
                     quantity = 3;
                     break;
                 default:
