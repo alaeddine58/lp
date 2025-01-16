@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const sizesString = sizes.join(', ');
 
         var sheetDBData = {
-            marchandise: "Pantalon",
+            marchandise: "Baggy Jogging",
             client: fullname,
             tlphone: phone,
             ville: "-",
