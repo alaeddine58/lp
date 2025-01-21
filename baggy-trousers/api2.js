@@ -105,8 +105,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     total = 329;
                     quantity = 2;
                     break;
-                case 'ثلاثة سراويل ب 449 درهم فقط':
-                    total = 449;
+                case 'ثلاثة سراويل ب 299 درهم فقط':
+                    total = 299;
                     quantity = 3;
                     break;
                 default:
