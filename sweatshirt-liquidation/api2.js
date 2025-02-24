@@ -101,11 +101,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
             switch (packHeader) {
                 case 'واحدة ب 70 درهم':
-                    total = 70;
+                    total = 90;
                     quantity = 1;
                     break;
 					case 'إثنان ب 140 درهم':
-                    total = 140;
+                    total = 160;
                     quantity = 2;
                     break;
                 case 'إثنان + الثالث مجانا ب 338': 
