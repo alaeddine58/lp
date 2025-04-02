@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const packHeader = packDetailsVisible.previousElementSibling.querySelector('.title').textContent;
 
             switch (packHeader) {
-                case 'واحد ب 159 درهم':
+                case 'واحد ب 139 درهم':
                     total = 160;
                     quantity = 1;
                     break;
@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     total = 300;
                     quantity = 2;
                     break;
-                case '2 ب 299 درهم + الثالث مجانا':
+                case '2 ب 278 درهم + الثالث مجانا':
                     total = 300;
                     quantity = 3;
                     break;
