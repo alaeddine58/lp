@@ -97,16 +97,16 @@ document.addEventListener("DOMContentLoaded", function () {
             const packHeader = packDetailsVisible.previousElementSibling.querySelector('.title').textContent;
 
             switch (packHeader) {
-                case 'واحد ب 299 درهم':
-                    total = 300;
+                case 'واحد ب 259 درهم':
+                    total = 260;
                     quantity = 1;
                     break;
-                case 'إثنان ب 499 فقط':
-                    total = 500;
+                case 'إثنان ب 449 فقط':
+                    total = 450;
                     quantity = 2;
                     break;
-                case 'ثلاثة ب 699 فقط':
-                    total = 700;
+                case 'ثلاثة ب 649 فقط':
+                    total = 650;
                     quantity = 3;
                     break;
                 default:
