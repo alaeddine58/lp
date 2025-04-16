@@ -154,7 +154,7 @@ document.addEventListener("DOMContentLoaded", function () {
             profondeur_en_cm: "",
             longueur_en_cm: "",
             largeur_en_cm: "",
-            commentaire: "",
+            commentaire: "Pantalon elastique",
             autoriser_ouverture: "1",
             nbre_de_colis: "1",
             numero_tel_a_notifier: "",
