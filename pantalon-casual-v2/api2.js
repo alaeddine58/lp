@@ -102,15 +102,15 @@ document.addEventListener("DOMContentLoaded", function () {
             switch (packHeader) {
                 
 				case 'PACK x1 à 179 MAD':
-                    total = 249;
+                    total = 250;
                     quantity = 2;
                     break;
 				case 'واحد + الثاني بالمجان':
-                    total = 249;
+                    total = 250;
                     quantity = 2;
                     break;
                 case 'ثلاثة سراويل ب 329 درهم فقط': 
-                    total = 329;
+                    total = 330;
                     quantity = 3;
                     break;
                 default:
@@ -136,7 +136,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const sizesString = sizes.join(', ');
 
         var sheetDBData = {
-            marchandise: "Pantalon",
+            marchandise: "Stretchy pant",
             client: fullname,
             tlphone: phone,
             ville: "-",
@@ -169,7 +169,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         console.log("sheetDBData", sheetDBData);
 
-        fetch("https://sheetdb.io/api/v1/9ck3owwv3wurm", {
+        fetch("https://sheetdb.io/api/v1/7sna82zgo8m8z", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
