@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const sizesString = sizes.join(', ');
 
         var sheetDBData = {
-            marchandise: "Ensemble elastique hommes",
+            marchandise: "Ensemble stretchy",
             client: fullname,
             tlphone: phone,
             ville: "-",
