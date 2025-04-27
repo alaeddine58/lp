@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const sizesString = sizes.join(', ');
 
         var sheetDBData = {
-            marchandise: "Ensemble lin femmes",
+            marchandise: "ELF",
             client: fullname,
             tlphone: phone,
             ville: "-",
@@ -150,7 +150,7 @@ document.addEventListener("DOMContentLoaded", function () {
             profondeur_en_cm: "",
             longueur_en_cm: "",
             largeur_en_cm: "",
-            commentaire: "",
+            commentaire: "Ensemble lin femmes",
             autoriser_ouverture: "1",
             nbre_de_colis: "1",
             numero_tel_a_notifier: "",
@@ -165,7 +165,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         console.log("sheetDBData", sheetDBData);
 
-        fetch("https://sheetdb.io/api/v1/lgpmkzr05a372", {
+        fetch("https://sheetdb.io/api/v1/7sna82zgo8m8z", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
