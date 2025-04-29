@@ -97,20 +97,20 @@ document.addEventListener("DOMContentLoaded", function () {
             const packHeader = packDetailsVisible.previousElementSibling.querySelector('.title').textContent;
 
             switch (packHeader) {
-                case 'واحد ب 259 درهم':
-                    total = 260;
+                case 'واحد ب 229 درهم':
+                    total = 230;
                     quantity = 1;
                     break;
-                case 'إثنان ب 449 فقط':
-                    total = 450;
+                case 'إثنان ب 399 فقط':
+                    total = 400;
                     quantity = 2;
                     break;
-                case 'ثلاثة ب 649 فقط':
-                    total = 650;
+                case 'ثلاثة ب 549 فقط':
+                    total = 550;
                     quantity = 3;
                     break;
                 default:
-                    total = 0;
+                    total = 230;
             }
         }
 
